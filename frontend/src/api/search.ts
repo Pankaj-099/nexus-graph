@@ -1,5 +1,5 @@
 import apiClient from './client'
-import { GraphNode, GraphEdge } from './graph'
+import type { GraphNode, GraphEdge } from './graph'
 
 export interface SearchResponse {
   nodes: GraphNode[]

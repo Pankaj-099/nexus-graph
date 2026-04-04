@@ -4,6 +4,7 @@ import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { Dashboard } from './pages/Dashboard'
 import { ProjectView } from './pages/ProjectView'
+import { GraphExplorer } from './pages/GraphExplorer'
 import { Loader } from './components/ui/Loader'
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -29,6 +30,7 @@ function App() {
       <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
       <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/projects/:id" element={<ProtectedRoute><ProjectView /></ProtectedRoute>} />
+      <Route path="/projects/:id/graph" element={<ProtectedRoute><GraphExplorer /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   )

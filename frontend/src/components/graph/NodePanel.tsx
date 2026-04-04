@@ -1,5 +1,5 @@
 import { X, Network, Link, Trash2 } from 'lucide-react'
-import { GraphNode, GraphEdge } from '../../api/graph'
+import type { GraphNode, GraphEdge } from '../../api/graph'
 import { Badge } from '../ui/Badge'
 import { Button } from '../ui/Button'
 
