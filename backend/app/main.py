@@ -4,12 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import create_tables
 
-# Import ALL models before create_tables
 from app.models.user import User  # noqa: F401
 from app.models.project import Project  # noqa: F401
 from app.models.graph import Node, Edge, SchemaDefinition, GraphSnapshot, ActivityLog  # noqa: F401
 
-from app.api.routes import auth, projects, graph
+from app.api.routes import auth, projects, graph, search
 
 
 @asynccontextmanager
@@ -40,6 +39,7 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/api")
 app.include_router(projects.router, prefix="/api")
 app.include_router(graph.router, prefix="/api")
+app.include_router(search.router, prefix="/api")
 
 
 @app.get("/")
