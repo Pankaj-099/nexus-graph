@@ -11,6 +11,7 @@ from app.models.graph import Node, Edge
 from app.services.ai.extractor import extract_relationships, natural_language_query, generate_graph_insights
 from app.services.graph.engine import GraphEngine
 from app.schemas.graph import BulkImportData, NodeCreate, EdgeCreate
+import traceback
 
 router = APIRouter(prefix="/projects/{project_id}/ai", tags=["AI"])
 
@@ -78,7 +79,9 @@ async def extract_from_text(
     try:
         result = await extract_relationships(request.text)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI extraction failed: {str(e)}")
+        print("❌ FULL ERROR:")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail="AI extraction failed")
 
     import_result = None
     if request.auto_import and result.get("nodes"):
@@ -138,7 +141,9 @@ async def nlq_query(
         result = await natural_language_query(request.question, graph_context)
         return result
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI query failed: {str(e)}")
+        print("❌ FULL ERROR:")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail="AI extraction failed")
 
 
 @router.get("/insights")
@@ -162,4 +167,6 @@ async def get_ai_insights(
         result = await generate_graph_insights(graph_context)
         return result
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI insights failed: {str(e)}")
+        print("❌ FULL ERROR:")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail="AI extraction failed")

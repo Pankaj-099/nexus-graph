@@ -5,6 +5,7 @@ import {
   Trash2, RefreshCw, Database, Settings, X, Check,
   FileJson, FileText, ChevronDown, ChevronUp
 } from 'lucide-react'
+import { BarChart3 } from 'lucide-react'
 import { useProjectStore } from '../store/projectStore'
 import { projectsApi } from '../api/projects'
 import { graphApi, type CreateNodePayload, type CreateEdgePayload, type CreateSchemaPayload } from '../api/graph'
@@ -222,6 +223,9 @@ export const ProjectView = () => {
           <Button size="sm" onClick={() => navigate(`/projects/${projectId}/graph`)}>
             <Network size={14} />
             View Graph
+          </Button>
+          <Button size="sm" variant="secondary" onClick={() => navigate(`/projects/${projectId}/analytics`)}>
+            <BarChart3 size={14} /> Analytics
           </Button>
         </div>
       </nav>

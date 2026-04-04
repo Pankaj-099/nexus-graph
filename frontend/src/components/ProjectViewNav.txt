@@ -1,0 +1,24 @@
+      {/* Navbar */}
+      <nav className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center gap-4">
+          <button onClick={() => navigate('/dashboard')} className="text-slate-400 hover:text-white transition-colors">
+            <ArrowLeft size={18} />
+          </button>
+          <div className="flex items-center gap-3 flex-1">
+            <div className="w-6 h-6 rounded-md" style={{ backgroundColor: project?.color }} />
+            <span className="font-semibold text-white">{project?.name}</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-slate-400">
+            <span className="text-indigo-400 font-medium">{nodes.length}</span> nodes ·
+            <span className="text-violet-400 font-medium">{edges.length}</span> edges
+          </div>
+          <Button size="sm" variant="secondary" onClick={() => navigate(`/projects/${projectId}/analytics`)}>
+            <BarChart3 size={14} />
+            Analytics
+          </Button>
+          <Button size="sm" onClick={() => navigate(`/projects/${projectId}/graph`)}>
+            <Network size={14} />
+            View Graph
+          </Button>
+        </div>
+      </nav>

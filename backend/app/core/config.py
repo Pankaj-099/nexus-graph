@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 
+
 class Settings(BaseSettings):
     APP_NAME: str = "Relationship Intelligence Platform"
     DEBUG: bool = True
@@ -10,9 +11,11 @@ class Settings(BaseSettings):
     FRONTEND_URL: str = "http://localhost:5173"
     OPENAI_API_KEY: str = ""
     ANTHROPIC_API_KEY: str = ""
+    GROQ_API_KEY: str = ""
 
     class Config:
         env_file = ".env"
         extra = "ignore"
+
 
 settings = Settings()
