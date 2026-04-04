@@ -8,7 +8,8 @@ from app.models.user import User  # noqa: F401
 from app.models.project import Project  # noqa: F401
 from app.models.graph import Node, Edge, SchemaDefinition, GraphSnapshot, ActivityLog  # noqa: F401
 
-from app.api.routes import auth, projects, graph, search, ai, analytics
+from app.api.routes import auth, projects, graph, search, ai, analytics, history
+from app.api.routes import ws
 
 
 @asynccontextmanager
@@ -42,6 +43,8 @@ app.include_router(graph.router, prefix="/api")
 app.include_router(search.router, prefix="/api")
 app.include_router(ai.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
+app.include_router(history.router, prefix="/api")
+app.include_router(ws.router)
 
 
 @app.get("/")
