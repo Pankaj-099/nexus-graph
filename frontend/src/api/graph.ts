@@ -1,5 +1,6 @@
 import apiClient from './client'
 import type { GraphNode, GraphEdge, GraphData, SchemaDefinition } from '../types/graph'
+export type { GraphNode, GraphEdge, GraphData, SchemaDefinition }
 
 export interface BulkImportResponse {
   nodes_created: number
