@@ -10,8 +10,6 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-![Graph Explorer Preview](https://placehold.co/1200x600/0f172a/6366f1?text=Relationship+Intelligence+Platform)
-
 [Live Demo](#) · [API Docs](#) · [Report Bug](#) · [Request Feature](#)
 
 </div>
@@ -421,12 +419,6 @@ relationship-intelligence-platform/
 
 ---
 
-## 🌐 Deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for full deployment guide covering Render, Railway, and VPS options.
-
----
-
 ## 🗺️ Roadmap
 
 - [ ] Graph collaboration (multi-cursor)
@@ -437,12 +429,6 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for full deployment guide covering Render, 
 - [ ] Graph versioning with rollback
 - [ ] Mobile app (React Native)
 - [ ] Plugin system for custom relationship logic
-
----
-
-## 📄 License
-
-MIT License — see [LICENSE](./LICENSE) for details.
 
 ---
 
