@@ -14,7 +14,6 @@ from app.api.routes import (
     activity, public, external_api
 )
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("🚀 Starting Relationship Intelligence Platform...")
